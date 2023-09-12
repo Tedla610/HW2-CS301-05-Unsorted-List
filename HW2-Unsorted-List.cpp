@@ -99,20 +99,20 @@ void UnsortedList::deleteItem(int key) {
         return;
     }
     NodeType* temp = head;
-    NodeType* next = nullptr;
+    NodeType* listData = nullptr;
     while (temp != nullptr && temp->data.value != key) {
-        next = temp;
+        listData = temp;
         temp = temp->next;
     }
     if (temp == nullptr) {
         cout << "Key not found" << endl;
         return;
     }
-    if (next == nullptr) {
+    if (listData == nullptr) {
         head = head->next;
     }
     else {
-        next->next = temp->next;
+        listData->next = temp->next;
     }
     delete temp;
     length--;
